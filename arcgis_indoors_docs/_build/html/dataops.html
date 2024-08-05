@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Operations &#8212; ArcGIS Indoors Docs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dataops';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix 1 - Domains" href="appendix.html" />
+    <link rel="prev" title="Conventions and Configurations" href="conventions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="ArcGIS Indoors Docs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="ArcGIS Indoors Docs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions and Configurations</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Operations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix 1 - Domains</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/geoshaun-epa/ArcGIS Indoors Docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/geoshaun-epa/ArcGIS Indoors Docs/issues/new?title=Issue%20on%20page%20%2Fdataops.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/dataops.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Operations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup">Archive Cleanup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup-process-checklist">Archive Cleanup Process Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-schema">Changing the Schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-use-type-cleanup">Units Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-use-type-cleanup">Details Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data-to-fgdb">Exporting Data to FGDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-data-processes">Building Data Processes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-environments-and-assets">GIS Environments and Assets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-environment">Production Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpro-projects">ArcPro Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staging-environment">Staging Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ArcPro Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-operations">
+<h1>Data Operations<a class="headerlink" href="#data-operations" title="Link to this heading">#</a></h1>
+<section id="archive-cleanup">
+<h2>Archive Cleanup<a class="headerlink" href="#archive-cleanup" title="Link to this heading">#</a></h2>
+<p><strong>Draft</strong>
+When branch managed editing is enabled, ArcGIS also enables archiving of edits.  We do not need these archives but we cannot disable them.  The archived edits clutter the tables and slow down the database operations.  If you open the GDB tables with a pure sql tool, you can see these extra records.  According to Esri, there is no way to turn this off.</p>
+<p>The only way to clear the extra records is to stop the branch edit service, disable versioning on the dataset, export the data to purge the archive, and then reimport the clean tables from a file GDB to the SDE.</p>
+<section id="archive-cleanup-process-checklist">
+<h3>Archive Cleanup Process Checklist<a class="headerlink" href="#archive-cleanup-process-checklist" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Delete all branches after merging all floor plans and space plans.</p></li>
+<li><p>Shut down services on geosecureprd2 that are making connections to the SDE and locking the schema. <a class="reference external" href="https://geosecureprd2.epa.gov:6443/arcgis/manager/">https://geosecureprd2.epa.gov:6443/arcgis/manager/</a> This can only be reached from the host itself.  RDP to jumphost and then to Geosecureprd  There is an Indoors folder that has many of the services in it. - see list</p></li>
+<li><p>Use the sde connection to kick everyone out of the indoors SDE and break all the locks.  You can’t do this with the arcgis account.  This may take a long time.  There may be hundreds of connections with thousands of locks.  Start by disconnecting all users.  If you select a large number of connections and select disconnect it may look like it has frozen but it is working.  Be patient.</p></li>
+<li><p>Use the sde connection to turn off Versioning on the Indoors dataset.</p></li>
+<li><p>(Test using the truncate archive tool)</p></li>
+<li><p>Export SDE feature class data to file GDB.  Use the feature class to geodatabase tool and export those classes and tables that are dirty.</p></li>
+<li><p>Rename the orginal feature classes by appending them with the export date.</p></li>
+<li><p>Import the feature classes back into the SDE from the file GDb</p></li>
+<li><p>Enable versioning on the dataset</p></li>
+<li><p>Start branch editing services</p></li>
+<li><p>Test the maps and apps</p></li>
+</ul>
+</section>
+</section>
+<section id="changing-the-schema">
+<h2>Changing the Schema<a class="headerlink" href="#changing-the-schema" title="Link to this heading">#</a></h2>
+<p>The schema is locked by the multiple services that access the SDE.  (Remember, the Viewer app uses a file GDB so it does not affect the production SDE).  The services below all have to be stopped in order to break the locks on the schema.  After the services are stopped, there will be other locks that must be manually broken.  If the locks can’t be broken, you can disable logins using the SDE account.  However, the SDE account does not have permissions on the geodatabase tables so you have to turn logins back on and then switch to the arcgis account and make the schema changes before any reconnections are made that will lock the schema.</p>
+<p>After the schema is changed, the services will not pickup the new config until they are republished.  You must update the map document and republish to push the changes.</p>
+<p>connect with the sde account and disconnect all locks.</p>
+<section id="checklist">
+<h3>Checklist<a class="headerlink" href="#checklist" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Stop services on <a class="reference external" href="https://geosecureprd2.epa.gov:6443/arcgis/manager/">GeoSecure ArcGIS Manager on GeoSecurePRD2</a></p>
+<ul>
+<li><p>Floor Plan Editor</p></li>
+<li><p>Space Planner</p></li>
+</ul>
+</li>
+<li><p>Clear all locks</p></li>
+<li><p>If necessary, disable/enable logins to kick all connections off</p></li>
+<li><p>Make schema changes</p></li>
+<li><p>If necessary, update maps and republish services</p></li>
+</ul>
+</section>
+</section>
+<section id="units-use-type-cleanup">
+<h2>Units Use_Type Cleanup<a class="headerlink" href="#units-use-type-cleanup" title="Link to this heading">#</a></h2>
+</section>
+<section id="details-use-type-cleanup">
+<h2>Details Use_Type Cleanup<a class="headerlink" href="#details-use-type-cleanup" title="Link to this heading">#</a></h2>
+</section>
+<section id="exporting-data-to-fgdb">
+<h2>Exporting Data to FGDB<a class="headerlink" href="#exporting-data-to-fgdb" title="Link to this heading">#</a></h2>
+</section>
+<section id="building-data-processes">
+<h2>Building Data Processes<a class="headerlink" href="#building-data-processes" title="Link to this heading">#</a></h2>
+<p>There are several general processes for data loading and editing.  We will also need processes to update data from applications that AGI is connected to.  For example,  facility managers will be updating floor plans by updating with changes and corrections.  Also, occupant updates will be coming from ebiz on a routine schedule as new employees are entered into the ebiz system on a daily basis.</p>
+<p><strong>Scenario: Adding a building, floor, or other large data set by Innovate</strong></p>
+<p>During the ArcGIS Indoors implementation process we will upload large amounts of data as we import CAD files.  These data will be done by a team of specialists at Innovate and will be mass loaded by entire floor and building.  These proceses will take hours to complete.  After the mass updates, the network will have to be recalculated.</p>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>Innovate will get CAD files from clients.  The appropriate layers will be extracted from the CADs to a local GDB.</p></li>
+<li><p>A branch in the production database will be created for the new building.</p></li>
+<li><p>The data from the CAD created GDB will be loaded into the branch using ArcPro.</p></li>
+<li><p>The Branch will be merged back into the default SDE</p></li>
+<li><p>Network routing will be recalculated??</p></li>
+</ol>
+<p><strong>Scenario: Adding a building, floor, or other large data set by Regional staff</strong>*</p>
+<p>Some regional staff have expressed an interest in loading their own data.  In this case the CAD files will be loaded into a template file GDB by these regional staff.  The GDB will then be examined and loaded by Inovate staff using the QA\QC processes they have created.</p>
+<p><strong>Scenario: Ad-hoc small geometry updates from facilities staff</strong>
+In this scenario facilities staff will be doing minor updates such as correcting room geometry or adding and updating walls, windows, and fixtures.  In addition, they may be changing attributes on features that already exist.  In this case, they will use the floor plan editor application.  This application creates a branch for a set of updates.  The user makes geometry and attribute changes and then requests for the changes to be merged back into the default branch.  The change administrators review the changes, merge them, and delete the<br />
+Operating Processes</p>
+<p><strong>Scenario: Hoteling/Hot desk: Hoteling will allow users to temporary reserve spaces to themselves for work.</strong>
+This application uses data about people that exists in the occupants table in Indoors.  It will be required to upadate the occupants table on a regular basis as employees join and leave the Agency.
+Scenario: Updating occupant data from Ebusiness or other HR systems: Lorem Ipsom
+Scenario: Updating Service now information:</p>
+<p><strong>Quality Control Processes</strong></p>
+<p>Esri has some scripts it has published to do basic quality control when importing data into AGI.  These functions do .<br />
+Quality Control Requirements</p>
+<ol class="arabic simple">
+<li><p>All units must have an AGI unique ID.  They may or may not have local numbering.  For instance, a janitor’s closet is space that needs to be reported on for AGI but may not need a local number or routing capability.</p></li>
+<li><p>There should be no voids in usable space.</p></li>
+<li><p>No overlapping of units.</p></li>
+<li><p>All units must have levels.  Levels will conform to the above pattern.</p></li>
+<li><p>Units use type conform to domain
+a.	Naming conventions defined ab
+Documentation
+ESRI attribute rules [4]</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="gis-environments-and-assets">
+<h1>GIS Environments and Assets<a class="headerlink" href="#gis-environments-and-assets" title="Link to this heading">#</a></h1>
+<section id="production-environment">
+<h2>Production Environment<a class="headerlink" href="#production-environment" title="Link to this heading">#</a></h2>
+<p>The ArcGIS Indoors production environment is hosted at <a class="reference external" href="https://geosecure.epa.gov">https://geosecure.epa.gov</a>. Geosecure is a standard ArcGIS portal environment that hosts other applications along with AGI.  It uses standard EPA SSO login as well as ArcGIS logins.  GeoSecure can be reached outside the VPN.</p>
+<section id="arcpro-projects">
+<h3>ArcPro Projects<a class="headerlink" href="#arcpro-projects" title="Link to this heading">#</a></h3>
+<p>Day to day GIS work performed in ArcPro is being done on the Windows server Winkel (<a class="reference external" href="http://v18ovhrtay724.aa.ad.epa.gov">v18ovhrtay724.aa.ad.epa.gov</a> - 137.67.224.154)  Users RDP across the VPN and login to the desktop.  The ArcPro documents are on the data drive in the folder <strong>D:\Public\Data\ArcGISIndoors</strong></p>
+<p>Projects are usually created for a particular task.  There may be other ArcPro projects but these are the ones that are used to execute the most important tasks.</p>
+<figure align="center">
+<img  src="./images/IndoorsDataLocation.jpg" alt="image" width="700" height="auto">
+<figcaption>Indoors Files
+</figcaption>
+</figure>
+<p><strong>Publishing to the production environment</strong></p>
+<p><strong>Loading data into the GDB</strong></p>
+<p><strong>Cleaning the Use_Type fields in new data</strong></p>
+</section>
+</section>
+<section id="staging-environment">
+<h2>Staging Environment<a class="headerlink" href="#staging-environment" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>ArcPro Projects<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>GeoSecureSTG</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Map: Indoors_BV - Indoors Branch Version
+
+Map: 
+</pre></div>
+</div>
+<p>DomainsAndCleaning</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**D:\Public\Data\ArcGISIndoors\Staging\Domains\DomainsAndCleaning**
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conventions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conventions and Configurations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix 1 - Domains</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup">Archive Cleanup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup-process-checklist">Archive Cleanup Process Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-schema">Changing the Schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-use-type-cleanup">Units Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-use-type-cleanup">Details Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data-to-fgdb">Exporting Data to FGDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-data-processes">Building Data Processes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-environments-and-assets">GIS Environments and Assets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-environment">Production Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpro-projects">ArcPro Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staging-environment">Staging Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ArcPro Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shaun Fontanella
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

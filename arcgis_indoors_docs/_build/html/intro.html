@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to your Jupyter Book &#8212; ArcGIS Indoors Docs</title>
+    <title>Introduction &#8212; ArcGIS Indoors Docs</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Applications" href="applications.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,14 +176,19 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    Introduction
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions and Configurations</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="dataops.html">Data Operations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix 1 - Domains</a></li>
 </ul>
 
     </div>
@@ -358,7 +361,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -369,11 +374,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>Introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -383,19 +396,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Link to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-indoors/overview">ArcGIS Indoors (AGI)</a> is a floor plan mapping platform from ESRI that brings traditional GIS mapping capabilities indoors. <a class="reference external" href="https://geosecure.epa.gov">Hosted on the geosecure platform</a>, it displays building floor plan data across multiple platforms including desktop, mobile, and web applications.  AGI can be used for wayfinding, room reservation, space planning, and facilities management.  AGI integrates with the current SSO user authentication system so no additional logins are necessary.</p>
+<p>The floor plan data in the  current pilot AGI platform has been imported from CAD files.  This is an ongoing process as new ones are imported into AGI.  The CAD files come from local building facility staff in the various regions and programs.  It is often the case that these data are old and out of date as buildings have been modified over time.  Therefore, they require a substantial amount of cleaning during the loading process.  Using ArcGIS Pro, data are both manually and programatically cleaned and imported using tools provided by Esri.  Once imported and published, local users, who are closest to the floor plan data, can use the multi-platform applications provided by AGI to keep the data accurate and up to date.</p>
+<p>As the National Geospatial Support Team (NGST) will be responsible for high level integration and maintenance of AGI, the purpose of this document is to aggregate integration and operations information between the various application teams.  Where possible, it will reference existing documents (see links) produced by other staff that have the latest updates instead of reproducing documentation for processes that are quickly evolving as the system is deployed.</p>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p><strong>Coordination Guide:</strong> The Coordination guide is a <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a> (not Jupyter notebook) maintained in a <a class="reference external" href="https://github.com/GeoShaun-EPA/ArcGIS-Indoors">Github reop</a> on the EPA organization account.  The book consists of markdown files that are automatically compiled into HTML and PDFs when changes are made to the files.  These static files are hosted on Github as a webpage that can be referenced from multiple sites so that only one set of docs is needed.  The source files can be edited through typical Git methods or directly on the Github webpage.</p>
+<p>The above html files are embedded in the ArcGIS experience.  To change the text of the ArcGIS experience, simply edit the markdown files in the git repo and after the git actions update the html files, the ArcGIS experience should be updated.</p>
+<p>Github Repo <a class="github reference external" href="https://github.com/GeoShaun-EPA/ArcGIS-Indoors">GeoShaun-EPA/ArcGIS-Indoors</a></p>
+<p>The following links to documentation are on Sharepoint and require authentication.</p>
+<p><a class="reference internal" href="#"><span class="xref myst">Indoors Viewer Guide</span></a></p>
+<p><a class="reference internal" href="#"><span class="xref myst">Space Planner Guide</span></a></p>
+<p><a class="reference internal" href="#"><span class="xref myst">Floor Plan Editor Guide</span></a></p>
+<p><a class="reference external" href="https://usepa.sharepoint.com/:w:/r/sites/ITIMOperationsPlanningCommitteeIOPC585-IOPCFunctionalLocationDataInitiative/Shared%20Documents/IOPC%20Functional%20Location%20Data%20Initiative/ArcGIS%20Indoors%20Concept%20of%20Operations%20ver02.docx?d=w431e5cb7cfb24bd7b8dad465b880bb70&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=I6KEXB">Concept of Operations</a></p>
+<p><a class="reference external" href="https://usepa.sharepoint.com/:w:/r/sites/ITIMOperationsPlanningCommitteeIOPC585-IOPCFunctionalLocationDataInitiative/Shared%20Documents/IOPC%20Functional%20Location%20Data%20Initiative/ESRI/ArcGIS%20Indoors%20CAD%20%26%20BIM%20Guides.docx?d=we0b53a8b235041588c3e7b280d629e20&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=yHoXlD">CAD and BIM guide</a></p>
+<div style="page-break-after: always"></div>
+</section>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-</ul>
 </div>
 </section>
 
@@ -430,11 +449,11 @@ It does not go in-depth into any particular topic - check out <a class="referenc
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="markdown.html"
+       href="applications.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Applications</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -444,6 +463,21 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

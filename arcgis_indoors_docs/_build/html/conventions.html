@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conventions and Configurations &#8212; ArcGIS Indoors Docs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'conventions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Operations" href="dataops.html" />
+    <link rel="prev" title="Applications" href="applications.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="ArcGIS Indoors Docs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="ArcGIS Indoors Docs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conventions and Configurations</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="dataops.html">Data Operations</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix 1 - Domains</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/geoshaun-epa/ArcGIS Indoors Docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/geoshaun-epa/ArcGIS Indoors Docs/issues/new?title=Issue%20on%20page%20%2Fconventions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/conventions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conventions and Configurations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conventions and Configurations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-conventions">Layer Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#units-offices-conference-rooms-etc">Units (Offices, Conference Rooms, etc)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#units-feature-class-fields">Units Feature Class Fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-numbering">Unit Numbering:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-space">Calculating space:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-domains">Unit Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-symbology">Unit Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-labels">Unit Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-popups">Unit Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-walls-windows-furniture-fixtures">Details (Walls, Windows, Furniture, Fixtures)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-domains">Details Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-symbology">Details Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-labels">Details Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-popups">Details Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-buildings">Facilities (Buildings)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-domains">Facilities Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-symbology">Facilities Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-labels">Facilities Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-popups">Facilities Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sites">Sites</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-domains">Site Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-symbology">Site Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-labels">Site Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-popups">Site Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occupants">Occupants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-of-interest">Points of Interest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-operations">Data Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup">Archive Cleanup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup-process-checklist">Archive Cleanup Process Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-schema">Changing the Schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-use-type-cleanup">Units Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-use-type-cleanup">Details Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data-to-fgdb">Exporting Data to FGDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-data-processes">Building Data Processes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-environments-and-assets">GIS Environments and Assets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-environment">Production Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpro-projects">ArcPro Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staging-environment">Staging Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ArcPro Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conventions-and-configurations">
+<h1>Conventions and Configurations<a class="headerlink" href="#conventions-and-configurations" title="Link to this heading">#</a></h1>
+<p>Space data at the EPA developed in many disconnected silos among the various EPA regions and programs.  There is also a temporal aspect to this problem as space data formats have evolved through several stages including hard copy drawings, 2D digital CAD files, and 3D BIM files.  These later two can can be directly imported saving the effort of digital authoring.  However, it is likely that the data uploaded from stakeholders will have its own local conventions for numbering rooms, naming spaces, and assigning uses to those spaces.  In addition, there is always an amount of dirty data.  It is important that AGI be flexible to allow for local input while also being able to link multiple systems that contribute to an integrated view.  For this reason, the standard AGI fields will be supplemented with fields useful to users at multiple levels at the EPA.  Domains will be used to constrain data to predetermined options to maintain clean records and make data entry easier.</p>
+<p>Where possible, existing standards will be adopted and or adapted when defining data domains.  By default,  AGI has a hierarchical data model that allows the application to efficiently filter and search data.  Sites, facilities, levels, and units have IDs based on a nesting structure.  Each unit is on a level, each level is in a facility, and each facility is at a site.  This structure will act as a backbone for the application but may require modifications for local use.</p>
+<p><strong>Projection</strong>  Web Mercator is the default projection as our maps will be accessed through web services for most users.  While Mercator comes with its issues, it will be the fastest to perform in the browser and we will have many features loading as users pan and zoom around the map.</p>
+<p><strong>Versioning</strong>  We are using a branched version configuration for the geodatabase.  In this workflow, an SDE connection is published as a branched version feature service with the feature service management capability enabled.  This allows users with the correct permissions to create a branch and make their edits in the branch.  The edits are then reviewed and merged back into the default branch.  Note, any changes to the schema will require republishing the service to pick up the changes.  The republishing process can be difficult as it requires shutting down any services and disconnecting all users that have locks in the database.</p>
+<p>Data Sources:</p>
+<ul class="simple">
+<li><p><strong>Sites</strong>: (Property Boundaries) Sites have not currently been integrated (ca. 3/24) but may come from parcel records.</p></li>
+<li><p><strong>Facility</strong>: Building footprints have come from Sunflower.</p></li>
+<li><p><strong>Units</strong> (rooms) have come from CAD drawings</p></li>
+<li><p><strong>Details</strong> (walls, doors, and furniture) have come from CAD drawings</p></li>
+<li><p><strong>Occupants</strong> Have come from the eBusiness system.  They are synced on a nightly basis.</p></li>
+</ul>
+<section id="layer-conventions">
+<h2>Layer Conventions<a class="headerlink" href="#layer-conventions" title="Link to this heading">#</a></h2>
+<p>When working in ArcPro, default configurations are often applied to new maps and layers.  It is easy to notice that precise settings may have been changed or lost until they have been put into a production map.  It is important to maintain consistent settings and have a known good reference to check against.  The following section outlines the settings for each layer.</p>
+<section id="units-offices-conference-rooms-etc">
+<h3>Units (Offices, Conference Rooms, etc)<a class="headerlink" href="#units-offices-conference-rooms-etc" title="Link to this heading">#</a></h3>
+<p>Units are one of the most important spatial features in AGI.  A unit is roughly equivalent to a room.  However, AGI must manage all spaces in a building including those that are typically not assigned room numbers such as hallways and mechanical spaces.  To be flexible, AGI divides entire building footprints into units instead of just rooms.  Using symbology and filters, these additional spaces can be filtered out of the maps but still retained for calculating space usage for reports.</p>
+<section id="units-feature-class-fields">
+<h4>Units Feature Class Fields<a class="headerlink" href="#units-feature-class-fields" title="Link to this heading">#</a></h4>
+<p>The Units feature class comes with default fields provided by Esri.  EPA has added fields for internal uses.  These are some of the important fields in the Units feature class.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Area ID</p></td>
+<td><p></p></td>
+<td><p>Areas are used by AGI to group together units for a particular use.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Building and Facility ID</p></td>
+<td><p></p></td>
+<td><p>This field is a concatenation of the</p></td>
+</tr>
+<tr class="row-even"><td><p>Facility ID</p></td>
+<td><p>MD0317</p></td>
+<td><p>The Facility ID is a unique ID that is used to match the unit back to the facility for reporting.  It is not in the default model but was added to make reporting easier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unit ID</p></td>
+<td><p>HQ.DC0459.1.9251</p></td>
+<td><p>The unitID is created by appending the site ID, the facility ID, the level, and the</p></td>
+</tr>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>9251</p></td>
+<td><p>The Name is sourced from Sunflower??  ??this is the field used in the web app??</p></td>
+</tr>
+<tr class="row-odd"><td><p>Long Name</p></td>
+<td><p>19251, G</p></td>
+<td><p>The Long Name is sourced from Sunflower???</p></td>
+</tr>
+<tr class="row-even"><td><p>Use_Type</p></td>
+<td><p>Stairway</p></td>
+<td><p>The use type is used for symbology and is restricted by a domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use Type Local</p></td>
+<td><p>Stairway</p></td>
+<td><p>The use type local is for local definitions of use type.  These can be used for reports and maps created for local consumption.</p></td>
+</tr>
+<tr class="row-even"><td><p>Level ID</p></td>
+<td><p>HQ.DC0459.1</p></td>
+<td><p>The Level ID is a concatenation of .  It is important because it allows the filtering of levels in the web apps.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gross Area</p></td>
+<td><p>123</p></td>
+<td><p>WHERE DOES THIS COME FROM?</p></td>
+</tr>
+<tr class="row-even"><td><p>Capacity</p></td>
+<td><p>123</p></td>
+<td><p>WHERE DOES THIS COME FREOM?  IS THIS THE LEGAL NUMBER?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Assignable</p></td>
+<td><p>Yes\No\U</p></td>
+<td><p>Assignable means that a person is there full time.  It is used in the reports for assignable space.</p></td>
+</tr>
+<tr class="row-even"><td><p>IDF</p></td>
+<td><p></p></td>
+<td><p>An intermediate distribution frame (IDF) is a satellite wiring closet used to distribute telco connections to individual wall jacks with trunk lines to the main distribution frame (MDF).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unit-numbering">
+<h4>Unit Numbering:<a class="headerlink" href="#unit-numbering" title="Link to this heading">#</a></h4>
+<p>The Units number is used for local signage.  Units such as conference rooms and offices often already have a local set of numbering and can very across buildings.  These numbering systems are tied to signage, documents, and procedures.</p>
+<p>AGI has a default internal unit ID system based on a spatial hierarch; Facility+Level+Local Room.  This column is x</p>
+<p>AGI also has a column for local numbering that can be used for local versions of online and static maps.  This column is x.</p>
+</section>
+<section id="calculating-space">
+<h4>Calculating space:<a class="headerlink" href="#calculating-space" title="Link to this heading">#</a></h4>
+<p>{Have to follow up with David on this.  Not sure how space was calculated} There is an attribute in the units FC for space measurement in square feet.  It appears that this comes from the CAD drawings.  The CAD drawings often do not have this information so there are many blank rows for space.  Space can be calculated using the feature geometry.  This needs more documentation.</p>
+</section>
+<section id="unit-domains">
+<h4>Unit Domains<a class="headerlink" href="#unit-domains" title="Link to this heading">#</a></h4>
+<p><strong>Use_Type Assignment:</strong> Space usage defines the activities that normally occur in a space i.e. conference room, mechanical room, restroom, etc.  Space usage is important because it  is used to symbolize and filter layers in the AGI applications.  It is also used in many reports to describe the amount of space devoted to each activity.</p>
+<p>Use_type data is an attribute that will vary wildly in the incoming data.  In addition to all of the local use types, there are many units that are imported using labels, measurements of square feet, and even no data at all.  Problems with map symbolization and reporting accuracy will occur if the use_type data is not consistent.</p>
+<p>In order to constrain data in the use_type field, A domain was constructed to consolidate the use_types.  This domain was based on the FICM standard.  The National Center for Education Statistics has a Facilities Inventory and Classification Manual (FICM). [1]  The FICM defines a space use hierarchy that is used by postsecondary institutions to report their space use to the Department of Education. [2]</p>
+</section>
+<section id="unit-symbology">
+<h4>Unit Symbology<a class="headerlink" href="#unit-symbology" title="Link to this heading">#</a></h4>
+<p>In the Indoors viewer app, units are symbolized by groupings of use_types.  Therefore, it is important that the data in this field is current.  Inaccurate data will prevent units from showing up or will put them in the wrong category.</p>
+<p>In the floor plan editor, the use_types are used natively without grouping.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Application</p></th>
+<th class="head"><p>Symbology Field</p></th>
+<th class="head"><p>Scale</p></th>
+<th class="head"><p>Style File</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Viewer</p></td>
+<td><p>use_type</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Planner</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Floor Plan Editor</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unit-labels">
+<h4>Unit Labels<a class="headerlink" href="#unit-labels" title="Link to this heading">#</a></h4>
+<p>the following table describes the unit label details for each application.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Application</p></th>
+<th class="head"><p>Label Field</p></th>
+<th class="head"><p>Font and Size</p></th>
+<th class="head"><p>Visability Scale</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Viewer</p></td>
+<td><p>use_type</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Planner</p></td>
+<td><p>use_type</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Floor Plan Editor</p></td>
+<td><p>use_type</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unit-popups">
+<h4>Unit Popups<a class="headerlink" href="#unit-popups" title="Link to this heading">#</a></h4>
+<p>[TBD]</p>
+</section>
+</section>
+<section id="details-walls-windows-furniture-fixtures">
+<h3>Details (Walls, Windows, Furniture, Fixtures)<a class="headerlink" href="#details-walls-windows-furniture-fixtures" title="Link to this heading">#</a></h3>
+<p>The details feature class is one of the most important.  The details FC shows walls, furniture, equipment etc.  The details FC is also used to create the network routing dataset.  The walls in the details FC dictate how the routing geoprocessing tools create the initial pathways.  When they run, the routing geoprocessing tools are filtered by the field “Use Type”.  For instance, the tools will ignore features with a use type of “furniture” but honor one that is “external wall.”</p>
+<p>Since the routing tools use the details attributes to create routes (normally you would choose all of the values that represent barriers to travel such as walls and cubicles.), it is important that the data be clean when it enters the system.  If a wall has an attribute that is not included in the filter it will be ignored when creating routes and could lead to inaccurate routing.
+When the incoming data arrives from the regions, it will likely have many different entries for “Use Type”.  They are mostly based on whatever was put in the CAD drawing.  It will be very important to clean this data as it come in so that it does not break the routing tools.
+The other issue is with the number of details features.  The import process brings in each line segment from the CAD files as a separate feature.  For instance, every step in a stairway is a feature.  This means that many features have to be sent and drawn when displaying the layer.</p>
+<section id="details-domains">
+<h4>Details Domains<a class="headerlink" href="#details-domains" title="Link to this heading">#</a></h4>
+<p>The Details use_type domain is in the table below.  We are in the process of converting all current data into this domain.
+Currently there is not a domain for the Details FC.  There should be one to constrain the “Use Type” field.  We are in the process of building one and writing the code that will clean up the current data that came in from the</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>_NotCat</p></td>
+<td><p>Not Categorized</p></td>
+<td><p>This category is used for data that has been imported but has not had its use type determinded yet.</p></td>
+</tr>
+<tr class="row-odd"><td><p>_Not Cat</p></td>
+<td><p>Text</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Door</p></td>
+<td><p>Door</p></td>
+</tr>
+<tr class="row-odd"><td><p>Building Structure</p></td>
+<td><p>Building Structure</p></td>
+</tr>
+<tr class="row-even"><td><p>Fixtures and Furniture</p></td>
+<td><p>Fixtures and Furniture</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elevator/Escalator</p></td>
+<td><p>Elevator/Escalator</p></td>
+</tr>
+<tr class="row-even"><td><p>Not Categorized</p></td>
+<td><p>Not Categorized</p></td>
+</tr>
+<tr class="row-odd"><td><p>Other</p></td>
+<td><p>Other</p></td>
+</tr>
+<tr class="row-even"><td><p>Stairs</p></td>
+<td><p>Stairs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Utility/Mechanical	Utility/Mechanical</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Wall-Temp	Wall-Temp</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Wall-Partial	Wall-Partial</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Wall	Wall</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Window	Window</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="details-symbology">
+<h4>Details Symbology<a class="headerlink" href="#details-symbology" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Application</p></th>
+<th class="head"><p>Symbology Field</p></th>
+<th class="head"><p>Scale</p></th>
+<th class="head"><p>Style File</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Viewer</p></td>
+<td><p>use_type</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Planner</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Floor Plan Editor</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Zoom in:
+Zoom out: 1:500
+Style file:</p>
+</section>
+<section id="details-labels">
+<h4>Details Labels<a class="headerlink" href="#details-labels" title="Link to this heading">#</a></h4>
+<p>•	field .<br />
+•	Font  at  size.<br />
+•	Not viewed beyond:
+•	Expression:</p>
+<p>Not all feature in the details layer will by symbolized.</p>
+</section>
+<section id="details-popups">
+<h4>Details Popups<a class="headerlink" href="#details-popups" title="Link to this heading">#</a></h4>
+</section>
+</section>
+<section id="facilities-buildings">
+<h3>Facilities (Buildings)<a class="headerlink" href="#facilities-buildings" title="Link to this heading">#</a></h3>
+<p>In AGI parlance, buildings are called facilities.  The facilities layer contains the building outlines on the site parcels.  EPA gets the facilities data from a program called Sunflower.  In addition to the standard AGI fields, the facilities FC will have EPA specific data that comes from Sunflower.  The table below details some of the important fields that are in the EPA AGI deployment.</p>
+<p>One important field from the facilites FC is the x.  It is used the in the viewer application to populate the dropdown list of building shortcut.</p>
+<p>Not all structures on a site may be tracked in AGI.  For instance, storage structures, car ports, or temporary buildings used for construction may not need to be tracked.  The determination of which structures on a site will be inventoried in AGI may be determined by the following criteria.</p>
+<ul class="simple">
+<li><p>Does the structure have utilities?</p></li>
+<li><p>Does the structure have an address?</p></li>
+<li><p>Is the structure temporary?</p></li>
+</ul>
+<section id="facilities-domains">
+<h4>Facilities Domains<a class="headerlink" href="#facilities-domains" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field Name</p></th>
+<th class="head"><p>Use</p></th>
+<th class="head"><p>ESRI</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>Field Name	Use	Esri Standard	Application</p>
+</section>
+<section id="facilities-symbology">
+<h4>Facilities Symbology<a class="headerlink" href="#facilities-symbology" title="Link to this heading">#</a></h4>
+<p>The facilities FC is mostly used to give reference to other layers.  It acts mainly as a basemap.  Therefore it is usually symbolized as a light colored polygon with and outline.  The outline shows how the building footprint varies from the floor plates.</p>
+</section>
+<section id="facilities-labels">
+<h4>Facilities Labels<a class="headerlink" href="#facilities-labels" title="Link to this heading">#</a></h4>
+<p>Facility labels are not on by default.</p>
+<p>•	field .<br />
+•	Font  at  size.<br />
+•	Not viewed beyond:
+•	Expression:</p>
+</section>
+<section id="facilities-popups">
+<h4>Facilities Popups<a class="headerlink" href="#facilities-popups" title="Link to this heading">#</a></h4>
+</section>
+</section>
+<section id="sites">
+<h3>Sites<a class="headerlink" href="#sites" title="Link to this heading">#</a></h3>
+<p>The sites FC contains the property outlines for each building.  In most cases, this will be the parcel boundary.  The sites FC will have EPA specific data that comes from other applications.  The table below details some of the important fields that are in the EPA AGI deployment.</p>
+<section id="site-domains">
+<h4>Site Domains<a class="headerlink" href="#site-domains" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field Name</p></th>
+<th class="head"><p>Use</p></th>
+<th class="head"><p>ESRI</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+</table>
+</div>
+</section>
+<section id="site-symbology">
+<h4>Site Symbology<a class="headerlink" href="#site-symbology" title="Link to this heading">#</a></h4>
+<p>Sites are like the facilities layer in that they should mostly provided context for other layers.  As such the sites FC is usually symbolized in a light color with and outline.</p>
+</section>
+<section id="site-labels">
+<h4>Site Labels<a class="headerlink" href="#site-labels" title="Link to this heading">#</a></h4>
+<p>•	field
+•	Font  at  size.<br />
+•	Not viewed beyond:
+•	Expression:</p>
+</section>
+<section id="site-popups">
+<h4>Site Popups<a class="headerlink" href="#site-popups" title="Link to this heading">#</a></h4>
+</section>
+</section>
+<section id="occupants">
+<h3>Occupants<a class="headerlink" href="#occupants" title="Link to this heading">#</a></h3>
+</section>
+<section id="points-of-interest">
+<h3>Points of Interest<a class="headerlink" href="#points-of-interest" title="Link to this heading">#</a></h3>
+<!-- ### 3D Scenes
+
+3D scenes are used in both the viewer app and in ArcPro to help verify connectivity of network data sets.  3D scenes take a lot of CPU\GPU resources to make and use.
+Wayfinding and Network Routing
+
+The wayfinding functions of AGI rely on a network data set that is derived from several tools.  The first tool creates a lattice of all possible routes.  The second tool thins out these routes and the third tool creates the final origin/destination (OD) matrix that does all the routing.
+The first two steps are very intensive operations.  For example, doing just the first step on the 8 floors of the north headquarters building took over 16 hours when working in the SDE.  It produced 1,315,260 features in the PrelimPathways FC on the SDE.  That is a lot of writing to the database.  It is more efficient to do the calculations local and then update the feature classes.
+As edits are made to the floorplans, the network data sets will have to be recalculated.  This will require careful planning to make the process as efficient as possible.
+I Asked Dave about the network routing GP tool performance at our weekly meeting and he said that they do the network routing on a local host using a file GDB.  It took some time to do the initial paths but after they had thinned out, the updated network data set only took about 15 minutes to resolve.
+https://desktop.arcgis.com/en/arcmap/latest/extensions/network-analyst/editing-network-datasets-ways-to-edit-the-network-dataset.htm
+
+
+### Wayfinding and Network Routing
+
+The wayfinding functions of AGI rely on a network data set that is derived from several tools.  The first tool creates a lattice of all possible routes.  The second tool thins out these routes and the third tool creates the final origin/destination (OD) matrix that does all the routing.
+
+The first two steps are very intensive operations.  For example, doing just the first step on the 8 floors of the north headquarters building took over 16 hours when working in the SDE.  It produced 1,315,260 features in the PrelimPathways FC on the SDE.  That is a lot of writing to the database.  It is more efficient to do the calculations local and then update the feature classes.
+
+As edits are made to the floorplans, the network data sets will have to be recalculated.  This will require careful planning to make the process as efficient as possible.
+
+I Asked Dave about the network routing GP tool performance at our weekly meeting and he said that they do the network routing on a local host using a file GDB.  It took some time to do the initial paths but after they had thinned out, the updated network data set only took about 15 minutes to resolve.
+https://desktop.arcgis.com/en/arcmap/latest/extensions/network-analyst/editing-network-datasets-ways-to-edit-the-network-dataset.htm -->
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-operations">
+<h1>Data Operations<a class="headerlink" href="#data-operations" title="Link to this heading">#</a></h1>
+<section id="archive-cleanup">
+<h2>Archive Cleanup<a class="headerlink" href="#archive-cleanup" title="Link to this heading">#</a></h2>
+<p><strong>Draft</strong>
+When branch managed editing is enabled, ArcGIS also enables archiving of edits.  We do not need these archives but we cannot disable them.  The archived edits clutter the tables and slow down the database operations.  If you open the GDB tables with a pure sql tool, you can see these extra records.  According to Esri, there is no way to turn this off.</p>
+<p>The only way to clear the extra records is to stop the branch edit service, disable versioning on the dataset, export the data to purge the archive, and then reimport the clean tables from a file GDB to the SDE.</p>
+<section id="archive-cleanup-process-checklist">
+<h3>Archive Cleanup Process Checklist<a class="headerlink" href="#archive-cleanup-process-checklist" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Delete all branches after merging all floor plans and space plans.</p></li>
+<li><p>Shut down services on geosecureprd2 that are making connections to the SDE and locking the schema. <a class="reference external" href="https://geosecureprd2.epa.gov:6443/arcgis/manager/">https://geosecureprd2.epa.gov:6443/arcgis/manager/</a> This can only be reached from the host itself.  RDP to jumphost and then to Geosecureprd  There is an Indoors folder that has many of the services in it. - see list</p></li>
+<li><p>Use the sde connection to kick everyone out of the indoors SDE and break all the locks.  You can’t do this with the arcgis account.  This may take a long time.  There may be hundreds of connections with thousands of locks.  Start by disconnecting all users.  If you select a large number of connections and select disconnect it may look like it has frozen but it is working.  Be patient.</p></li>
+<li><p>Use the sde connection to turn off Versioning on the Indoors dataset.</p></li>
+<li><p>(Test using the truncate archive tool)</p></li>
+<li><p>Export SDE feature class data to file GDB.  Use the feature class to geodatabase tool and export those classes and tables that are dirty.</p></li>
+<li><p>Rename the orginal feature classes by appending them with the export date.</p></li>
+<li><p>Import the feature classes back into the SDE from the file GDb</p></li>
+<li><p>Enable versioning on the dataset</p></li>
+<li><p>Start branch editing services</p></li>
+<li><p>Test the maps and apps</p></li>
+</ul>
+</section>
+</section>
+<section id="changing-the-schema">
+<h2>Changing the Schema<a class="headerlink" href="#changing-the-schema" title="Link to this heading">#</a></h2>
+<p>The schema is locked by the multiple services that access the SDE.  (Remember, the Viewer app uses a file GDB so it does not affect the production SDE).  The services below all have to be stopped in order to break the locks on the schema.  After the services are stopped, there will be other locks that must be manually broken.  If the locks can’t be broken, you can disable logins using the SDE account.  However, the SDE account does not have permissions on the geodatabase tables so you have to turn logins back on and then switch to the arcgis account and make the schema changes before any reconnections are made that will lock the schema.</p>
+<p>After the schema is changed, the services will not pickup the new config until they are republished.  You must update the map document and republish to push the changes.</p>
+<p>connect with the sde account and disconnect all locks.</p>
+<section id="checklist">
+<h3>Checklist<a class="headerlink" href="#checklist" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Stop services on <a class="reference external" href="https://geosecureprd2.epa.gov:6443/arcgis/manager/">GeoSecure ArcGIS Manager on GeoSecurePRD2</a></p>
+<ul>
+<li><p>Floor Plan Editor</p></li>
+<li><p>Space Planner</p></li>
+</ul>
+</li>
+<li><p>Clear all locks</p></li>
+<li><p>If necessary, disable/enable logins to kick all connections off</p></li>
+<li><p>Make schema changes</p></li>
+<li><p>If necessary, update maps and republish services</p></li>
+</ul>
+</section>
+</section>
+<section id="units-use-type-cleanup">
+<h2>Units Use_Type Cleanup<a class="headerlink" href="#units-use-type-cleanup" title="Link to this heading">#</a></h2>
+</section>
+<section id="details-use-type-cleanup">
+<h2>Details Use_Type Cleanup<a class="headerlink" href="#details-use-type-cleanup" title="Link to this heading">#</a></h2>
+</section>
+<section id="exporting-data-to-fgdb">
+<h2>Exporting Data to FGDB<a class="headerlink" href="#exporting-data-to-fgdb" title="Link to this heading">#</a></h2>
+</section>
+<section id="building-data-processes">
+<h2>Building Data Processes<a class="headerlink" href="#building-data-processes" title="Link to this heading">#</a></h2>
+<p>There are several general processes for data loading and editing.  We will also need processes to update data from applications that AGI is connected to.  For example,  facility managers will be updating floor plans by updating with changes and corrections.  Also, occupant updates will be coming from ebiz on a routine schedule as new employees are entered into the ebiz system on a daily basis.</p>
+<p><strong>Scenario: Adding a building, floor, or other large data set by Innovate</strong></p>
+<p>During the ArcGIS Indoors implementation process we will upload large amounts of data as we import CAD files.  These data will be done by a team of specialists at Innovate and will be mass loaded by entire floor and building.  These proceses will take hours to complete.  After the mass updates, the network will have to be recalculated.</p>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>Innovate will get CAD files from clients.  The appropriate layers will be extracted from the CADs to a local GDB.</p></li>
+<li><p>A branch in the production database will be created for the new building.</p></li>
+<li><p>The data from the CAD created GDB will be loaded into the branch using ArcPro.</p></li>
+<li><p>The Branch will be merged back into the default SDE</p></li>
+<li><p>Network routing will be recalculated??</p></li>
+</ol>
+<p><strong>Scenario: Adding a building, floor, or other large data set by Regional staff</strong>*</p>
+<p>Some regional staff have expressed an interest in loading their own data.  In this case the CAD files will be loaded into a template file GDB by these regional staff.  The GDB will then be examined and loaded by Inovate staff using the QA\QC processes they have created.</p>
+<p><strong>Scenario: Ad-hoc small geometry updates from facilities staff</strong>
+In this scenario facilities staff will be doing minor updates such as correcting room geometry or adding and updating walls, windows, and fixtures.  In addition, they may be changing attributes on features that already exist.  In this case, they will use the floor plan editor application.  This application creates a branch for a set of updates.  The user makes geometry and attribute changes and then requests for the changes to be merged back into the default branch.  The change administrators review the changes, merge them, and delete the<br />
+Operating Processes</p>
+<p><strong>Scenario: Hoteling/Hot desk: Hoteling will allow users to temporary reserve spaces to themselves for work.</strong>
+This application uses data about people that exists in the occupants table in Indoors.  It will be required to upadate the occupants table on a regular basis as employees join and leave the Agency.
+Scenario: Updating occupant data from Ebusiness or other HR systems: Lorem Ipsom
+Scenario: Updating Service now information:</p>
+<p><strong>Quality Control Processes</strong></p>
+<p>Esri has some scripts it has published to do basic quality control when importing data into AGI.  These functions do .<br />
+Quality Control Requirements</p>
+<ol class="arabic simple">
+<li><p>All units must have an AGI unique ID.  They may or may not have local numbering.  For instance, a janitor’s closet is space that needs to be reported on for AGI but may not need a local number or routing capability.</p></li>
+<li><p>There should be no voids in usable space.</p></li>
+<li><p>No overlapping of units.</p></li>
+<li><p>All units must have levels.  Levels will conform to the above pattern.</p></li>
+<li><p>Units use type conform to domain
+a.	Naming conventions defined ab
+Documentation
+ESRI attribute rules [4]</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="gis-environments-and-assets">
+<h1>GIS Environments and Assets<a class="headerlink" href="#gis-environments-and-assets" title="Link to this heading">#</a></h1>
+<section id="production-environment">
+<h2>Production Environment<a class="headerlink" href="#production-environment" title="Link to this heading">#</a></h2>
+<p>The ArcGIS Indoors production environment is hosted at <a class="reference external" href="https://geosecure.epa.gov">https://geosecure.epa.gov</a>. Geosecure is a standard ArcGIS portal environment that hosts other applications along with AGI.  It uses standard EPA SSO login as well as ArcGIS logins.  GeoSecure can be reached outside the VPN.</p>
+<section id="arcpro-projects">
+<h3>ArcPro Projects<a class="headerlink" href="#arcpro-projects" title="Link to this heading">#</a></h3>
+<p>Day to day GIS work performed in ArcPro is being done on the Windows server Winkel (<a class="reference external" href="http://v18ovhrtay724.aa.ad.epa.gov">v18ovhrtay724.aa.ad.epa.gov</a> - 137.67.224.154)  Users RDP across the VPN and login to the desktop.  The ArcPro documents are on the data drive in the folder <strong>D:\Public\Data\ArcGISIndoors</strong></p>
+<p>Projects are usually created for a particular task.  There may be other ArcPro projects but these are the ones that are used to execute the most important tasks.</p>
+<figure align="center">
+<img  src="./images/IndoorsDataLocation.jpg" alt="image" width="700" height="auto">
+<figcaption>Indoors Files
+</figcaption>
+</figure>
+<p><strong>Publishing to the production environment</strong></p>
+<p><strong>Loading data into the GDB</strong></p>
+<p><strong>Cleaning the Use_Type fields in new data</strong></p>
+</section>
+</section>
+<section id="staging-environment">
+<h2>Staging Environment<a class="headerlink" href="#staging-environment" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>ArcPro Projects<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>GeoSecureSTG</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Map: Indoors_BV - Indoors Branch Version
+
+Map: 
+</pre></div>
+</div>
+<p>DomainsAndCleaning</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**D:\Public\Data\ArcGISIndoors\Staging\Domains\DomainsAndCleaning**
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="applications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Applications</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dataops.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Operations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conventions and Configurations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-conventions">Layer Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#units-offices-conference-rooms-etc">Units (Offices, Conference Rooms, etc)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#units-feature-class-fields">Units Feature Class Fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-numbering">Unit Numbering:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-space">Calculating space:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-domains">Unit Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-symbology">Unit Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-labels">Unit Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-popups">Unit Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-walls-windows-furniture-fixtures">Details (Walls, Windows, Furniture, Fixtures)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-domains">Details Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-symbology">Details Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-labels">Details Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#details-popups">Details Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-buildings">Facilities (Buildings)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-domains">Facilities Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-symbology">Facilities Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-labels">Facilities Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facilities-popups">Facilities Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sites">Sites</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-domains">Site Domains</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-symbology">Site Symbology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-labels">Site Labels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#site-popups">Site Popups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occupants">Occupants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-of-interest">Points of Interest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-operations">Data Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup">Archive Cleanup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#archive-cleanup-process-checklist">Archive Cleanup Process Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-schema">Changing the Schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-use-type-cleanup">Units Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-use-type-cleanup">Details Use_Type Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data-to-fgdb">Exporting Data to FGDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-data-processes">Building Data Processes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-environments-and-assets">GIS Environments and Assets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-environment">Production Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcpro-projects">ArcPro Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staging-environment">Staging Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ArcPro Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shaun Fontanella
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
